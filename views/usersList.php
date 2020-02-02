@@ -1,23 +1,3 @@
-<script>
-users = [
-<?php
-  // this is messy. better would be to create a separate endpoint to serve filters
-  // or even better - to use a framework like React that would nicely handle this
-
-  foreach($users as $user) {
-    $resolvedUser = array(
-        "name" => $user->getName(),
-        "email" => $user->getEmail(),
-        "city" => $user->getCity(),
-        "phoneNumber" => $user->getPhoneNumber()
-    );
-    echo json_encode($resolvedUser);
-    echo ",";
-  }
-?>
-]
-</script>
-
 <table class="table table-striped">
 	<thead>
 		<tr>
