@@ -28,7 +28,7 @@
 
 
 <script>
-  $("form").on( "submit", async function( event ) {
+  $("#new-user-form").on( "submit", async function( event ) {
     event.preventDefault();
 
     const qs = $( this ).serialize()
@@ -46,7 +46,7 @@
             const user = createUser(jsonUser.name, jsonUser.email, jsonUser.city, jsonUser.phone_number)
             users.push(user)
             renderUserList(users)
-            $("form")[0].reset()
+            $("#new-user-form").trigger("reset")
         }
     } catch(e) {
         console.log(e)
